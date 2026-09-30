@@ -16,3 +16,16 @@ cd /home/user/skriptimine/
 
 d) tekitame lokaalse repositooriumi git süsteemi jaoks antud kaustas
 git init
+
+remote seadistamine:
+e) loome SSH võtmepaari (~/.ssh/id_ed25519 ja id_ed25519.pub),
+   avaliku võtme (id_ed25519.pub) sisu lisame GitHubi: Settings -> SSH and GPG keys
+ssh-keygen -t ed25519 -C "roger-romeo.arm@voco.ee"
+cat ~/.ssh/id_ed25519.pub
+ssh -T git@github.com
+
+f) git remote add nimi github_aadress
+git remote add skriptimine git@github.com:rgrnqst/LINUX_skriptimine.git
+
+g) git remote kontroll
+git remote -v

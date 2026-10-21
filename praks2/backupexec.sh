@@ -23,7 +23,7 @@ while getopts "nfk:c:h" opt; do
 done
 shift $((OPTIND - 1))
 
-SRC=$(realpath "${1:-$BASE/src}")    # mida varundada
+SRC=$(realpath -m "${1:-$BASE/src}")    # mida varundada
 DEST=$(realpath -m "${2:-$BASE/backup}")  # kuhu varundada
 LOG=$BASE/logs/backup.log
 NAME=$(basename "$SRC")               # arhiivi juurkaust, nt src
